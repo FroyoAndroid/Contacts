@@ -5,11 +5,17 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
+        android:name="com.orm.SugarApp"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+        <meta-data android:name="DATABASE" android:value="skillContact.db" />
+        <meta-data android:name="VERSION" android:value="1" />
+        <meta-data android:name="QUERY_LOG" android:value="true" />
+
         <activity
             android:name="com.contacts.test.contacts.MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -17,7 +23,8 @@
         </activity>
         <activity
             android:name="com.contacts.test.contacts.PupilActivity"
-            android:label="Add Pupil"></activity>
+            android:label="Add Pupil"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
