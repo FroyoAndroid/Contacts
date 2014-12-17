@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content">
+
+
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/backButton"
+                android:id="@+id/backButton" />
+        </LinearLayout>
+
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchViewSelectContact"
+            android:clickable="true"
+            android:queryHint="Choose Contact"
+            android:inputType="textPersonName" />
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/linlayouthorCompetenciesCase"
+            android:visibility="visible">
+
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linlayverCompRating">
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency1" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency2" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency3" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency4" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency5" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency6" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency7" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency8" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency9" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency10" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency11" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency12" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency13" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency14" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency15" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency16" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency17" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency18" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency19" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency20" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency21" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/ratingBarCompetency22" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btnSave"
+                android:id="@+id/btnSave" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/footerLayoutBox">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/footer"
+                android:text="This is the footer section"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_marginTop="30dp" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

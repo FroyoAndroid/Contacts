@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent">
+
+
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/backButton"
+                android:id="@+id/backButton" />
+        </LinearLayout>
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchViewSelectContact"
+            android:clickable="true"
+            android:queryHint="Choose Contact"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtHouseStreet"
+            android:hint="House And Street" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtTown"
+            android:hint="Town" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtPostcode"
+            android:hint="Postcode" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtContactNumber"
+            android:hint="Contact number" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:columnCount="2"
+            android:rowCount="1"
+            android:id="@+id/gridLayoutRadioBtns"
+            android:textAlignment="center"
+            android:paddingLeft="50dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radiobtn1"
+                android:id="@+id/radiobtn1" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radiobtn2"
+                android:id="@+id/radiobtn2" />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:columnCount="5"
+            android:rowCount="1"
+            android:id="@+id/gridLayoutRadioBtns2"
+            android:textAlignment="center"
+            android:paddingLeft="50dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radiobtn3"
+                android:text="@string/radiobtn3" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="6"
+                android:id="@+id/editTextDateStarted"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:hint="Date Started" />
+
+
+        </GridLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btnCancel"
+                android:id="@+id/btnCancel" />
+
+            <Button
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:text="@string/btnSave"
+                android:id="@+id/btnSave" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/footerLayoutBox">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/footer"
+                android:text="This is the footer section"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_marginTop="30dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

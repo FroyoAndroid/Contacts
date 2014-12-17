@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/backButton" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/txtFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full Name" />
+
+        <EditText
+            android:id="@+id/txtHouseStreet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="House And Street" />
+
+        <EditText
+            android:id="@+id/txtTown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Town" />
+
+        <EditText
+            android:id="@+id/txtPostcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Postcode"
+            android:numeric="integer" />
+
+        <EditText
+            android:id="@+id/txtContactNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contact number"
+            android:numeric="integer" />
+
+        <GridLayout
+            android:id="@+id/gridLayoutRadioBtns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:paddingLeft="10dp"
+            android:rowCount="1"
+            android:textAlignment="center">
+
+            <RadioButton
+                android:id="@+id/radiobtn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radiobtn1" />
+
+            <RadioButton
+                android:id="@+id/radiobtn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radiobtn2" />
+        </GridLayout>
+
+        <GridLayout
+            android:id="@+id/gridLayoutRadioBtns2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:columnCount="11"
+            android:paddingLeft="10dp"
+            android:rowCount="1"
+            android:textAlignment="center">
+
+            <RadioButton
+                android:id="@+id/radiobtn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radiobtn3" />
+        </GridLayout>
+
+        <GridLayout
+            android:id="@+id/gridLayoutTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:paddingLeft="10dp"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/testPassedLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test Passed (times)" />
+
+            <Spinner
+                android:id="@+id/testPassed"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Test Passed" />
+
+            <TextView
+                android:id="@+id/lessonHadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lessons" />
+
+            <Spinner
+                android:id="@+id/lessonsHad"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Lesson Had" />
+        </GridLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btnClear" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save Pupil" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/footerLayoutBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/footer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="This is the footer section"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

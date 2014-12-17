@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Contacts</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="competency">
+        <item>Cockpit Drill</item>
+        <item>Moving Away</item>
+        <item>Stopping</item>
+        <item>Turning Left</item>
+        <item>Turning Right</item>
+        <item>T Junctions</item>
+        <item>Crossroads</item>
+        <item>Roundabouts</item>
+        <item>Pedestrian Crossings</item>
+        <item>Dual Carriageways</item>
+        <item>One Way Streets</item>
+        <item>Meeting Situations</item>
+        <item>Defensive Driving</item>
+        <item>Using Mirrors</item>
+        <item>Emergency Stop</item>
+        <item>Eco Driving</item>
+        <item>Turn In The Road</item>
+        <item>Parallel Park</item>
+        <item>Left Reverse</item>
+        <item>Bay Parking</item>
+        <item>Show And tell</item>
+        <item>Mock Tests</item>
+    </string-array>
+
+    <string-array name="testPassed">
+        <item>1st</item>
+        <item>2nd</item>
+        <item>3rd</item>
+        <item>4th</item>
+        <item>5th</item>
+        <item>6th</item>
+        <item>7th</item>
+        <item>8th</item>
+        <item>9th</item>
+        <item>10th</item>
+    </string-array>
+    <string name="radiobtn1">Facebook Friend</string>
+    <string name="radiobtn2">Theory Passed</string>
+    <string name="radiobtn3">Test Booked</string>
+
+    <string name="mainmenuButton1">Add Contact</string>
+    <string name="mainmenuButton2">Edit Contact</string>
+    <string name="mainmenuButton3">Contact Skills</string>
+
+    <string name="contactskillsButton1">Save</string>
+
+
+    <string name="backButton">Back</string>
+
+    <string name="btnClear">Clear</string>
+
+    <string name="btnSave">Save</string>
+
+    <string name="btnDelete">Delete</string>
+
+    <string name="btnCancel">Cancel</string>
+
+
+</resources>
