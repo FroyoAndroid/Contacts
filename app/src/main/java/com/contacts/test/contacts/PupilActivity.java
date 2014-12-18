@@ -12,6 +12,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.contacts.test.util.Pupil;
 
@@ -79,8 +80,13 @@ public class PupilActivity extends Activity {
             public void onClick(View v) {
                 // Pupil(String name, String houseStreet, String town, String postcode, String contact, Boolean isFacebookFriend, Boolean isTheoryPassed, Boolean isTestBooked, Date testBookedDate, String testPassed, String lessonHad)
                 //String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-                Pupil object = new Pupil(fullName.getText().toString(),houseStreet.getText().toString(),town.getText().toString(),postcode.getText().toString(),contact.getText().toString(),isFacebookFriend.isChecked(),isTheoryPassed.isChecked(),isTestBooked.isChecked(),"12/5/2014",testPassed.getSelectedItem().toString(),lessonHad.getSelectedItem().toString());
-                object.save();
+               try {
+                   Pupil object = new Pupil(fullName.getText().toString(), houseStreet.getText().toString(), town.getText().toString(), postcode.getText().toString(), contact.getText().toString(), isFacebookFriend.isChecked(), isTheoryPassed.isChecked(), isTestBooked.isChecked(), "12/5/2014", testPassed.getSelectedItem().toString(), lessonHad.getSelectedItem().toString());
+                   object.save();
+               }catch(Exception e ){
+                   Toast.makeText(getApplicationContext(),"Error while writing it to Database",Toast.LENGTH_LONG).show();
+
+               }
             }
         });
         lessonHadArray = new ArrayList<String>();

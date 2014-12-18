@@ -29,6 +29,16 @@ public class MainActivity extends Activity {
                 startActivity(i);
             }
         });
+
+
+        // contact pupil click listener
+        contactPupil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),SearchActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
 
