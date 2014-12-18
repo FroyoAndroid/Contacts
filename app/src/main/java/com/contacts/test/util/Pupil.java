@@ -15,14 +15,14 @@ public class Pupil extends SugarRecord<Pupil> {
     Boolean isFacebookFriend;
     Boolean isTheoryPassed;
     Boolean isTestBooked;
-    Date testBookedDate;
+    String testBookedDate;
     String testPassed;
     String lessonHad;
 
     public Pupil() {
     }
 
-    public Pupil(String name, String houseStreet, String town, String postcode, String contact, Boolean isFacebookFriend, Boolean isTheoryPassed, Boolean isTestBooked, Date testBookedDate, String testPassed, String lessonHad) {
+    public Pupil(String name, String houseStreet, String town, String postcode, String contact, Boolean isFacebookFriend, Boolean isTheoryPassed, Boolean isTestBooked, String testBookedDate, String testPassed, String lessonHad) {
         this.name = name;
         this.houseStreet = houseStreet;
         this.town = town;
@@ -100,11 +100,11 @@ public class Pupil extends SugarRecord<Pupil> {
         this.isTestBooked = isTestBooked;
     }
 
-    public Date getTestBookedDate() {
+    public String getTestBookedDate() {
         return testBookedDate;
     }
 
-    public void setTestBookedDate(Date testBookedDate) {
+    public void setTestBookedDate(String testBookedDate) {
         this.testBookedDate = testBookedDate;
     }
 

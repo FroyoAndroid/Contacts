@@ -17,6 +17,7 @@ import com.contacts.test.util.Pupil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class PupilActivity extends Activity {
     boolean isFBFriend,isPassed,isBooked;
@@ -51,7 +52,24 @@ public class PupilActivity extends Activity {
                 finish();
             }
         });
+        /**
+         * Clear Button
+         */
+        clearData =  (Button) findViewById(R.id.btnClear);
+        clearData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fullName.setText("");
+                houseStreet.setText("");
+                town.setText("");
+                postcode.setText("");
+                contact.setText("");
+                isFacebookFriend.setChecked(false);
+                isTheoryPassed.setChecked(false);
+                isTestBooked.setChecked(false);
 
+            }
+        });
         /**
          * Add Pupil Button
          */
@@ -59,7 +77,9 @@ public class PupilActivity extends Activity {
         addPupil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Pupil object = new Pupil();
+                // Pupil(String name, String houseStreet, String town, String postcode, String contact, Boolean isFacebookFriend, Boolean isTheoryPassed, Boolean isTestBooked, Date testBookedDate, String testPassed, String lessonHad)
+                //String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+                Pupil object = new Pupil(fullName.getText().toString(),houseStreet.getText().toString(),town.getText().toString(),postcode.getText().toString(),contact.getText().toString(),isFacebookFriend.isChecked(),isTheoryPassed.isChecked(),isTestBooked.isChecked(),"12/5/2014",testPassed.getSelectedItem().toString(),lessonHad.getSelectedItem().toString());
                 object.save();
             }
         });
