@@ -26,7 +26,8 @@
             android:label="Add Pupil"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name="com.contacts.test.contacts.SearchActivity"
+        <activity
+            android:name="com.contacts.test.contacts.SearchActivity"
             android:label="Search Pupil"
             android:screenOrientation="portrait">
         </activity>
