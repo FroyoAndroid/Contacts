@@ -14,11 +14,12 @@ import com.contacts.test.util.Pupil;
 import com.contacts.test.util.PupilListAdapter;
 
 import java.util.List;
-
+import com.contacts.test.util.Pupil;
 /**
  * Created by nirajkumar.chauhan on 12/18/2014.
  */
 public class SearchActivity extends Activity {
+
     SearchView searchView;
     ListView pupilList;
     List<Pupil> pupil;
@@ -35,6 +36,7 @@ public class SearchActivity extends Activity {
 
         PupilListAdapter adapter = new PupilListAdapter(this,R.layout.pupil_list_item,pupil);
         pupilList.setAdapter(adapter);
+
     }
 
 
