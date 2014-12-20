@@ -69,6 +69,7 @@
             android:rowCount="1"
             android:textAlignment="center">
 
+            
             <RadioButton
                 android:id="@+id/radiobtnfacebook"
                 android:layout_width="wrap_content"
@@ -170,7 +171,7 @@
 
             <EditText
                 android:id="@+id/footer"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="This is the footer section"
