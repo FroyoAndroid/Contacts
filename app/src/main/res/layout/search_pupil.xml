@@ -6,12 +6,13 @@
    >
 
 
-        <SearchView
+        <EditText
             android:id="@+id/searchPupil"
             android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:queryHint="Type Name Here"></SearchView>
+            android:padding="10dp"
+            android:hint="Search Pupil Here"></EditText>
 
         <ListView
             android:id="@+id/pupilList"
