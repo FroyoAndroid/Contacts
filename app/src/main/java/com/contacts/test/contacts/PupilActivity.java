@@ -22,10 +22,11 @@ import java.util.Locale;
 
 public class PupilActivity extends Activity {
     boolean isFBFriend,isPassed,isBooked;
+    TextView dateText;
     EditText fullName, houseStreet, town, postcode, contact;
     RadioButton isFacebookFriend, isTheoryPassed, isTestBooked;
     Spinner testPassed, lessonHad;
-    Button back, addPupil, clearData;
+    Button back, addPupil, clearData,setDate;
     List<String> lessonHadArray;
 
     @Override
@@ -42,7 +43,7 @@ public class PupilActivity extends Activity {
         isFacebookFriend = (RadioButton) findViewById(R.id.radiobtnfacebook);
         isTheoryPassed = (RadioButton) findViewById(R.id.radiobtnTheoryPassed);
         isTestBooked = (RadioButton) findViewById(R.id.radiobtnTestBooked);
-
+        setDate = findViewById(R.id.setDate);
         /**
          * back button
          */
@@ -51,6 +52,15 @@ public class PupilActivity extends Activity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+        /**
+         * Set Date Button Click listener
+         */
+        setDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
         /**
