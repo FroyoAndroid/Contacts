@@ -19,6 +19,17 @@ public class Pupil extends SugarRecord<Pupil> {
     String testPassed;
     String lessonHad;
 
+    public Skill getSkill() {
+        return skill;
+    }
+
+    public void setSkill(Skill skill) {
+        this.skill = skill;
+    }
+
+    // defining relationnship
+    Skill skill;
+
     public Pupil() {
     }
 

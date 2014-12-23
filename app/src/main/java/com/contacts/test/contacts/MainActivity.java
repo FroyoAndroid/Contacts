@@ -39,6 +39,15 @@ public class MainActivity extends Activity {
                 startActivity(i);
             }
         });
+
+        //editPupil click listener
+        editPupil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),SkillActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
 

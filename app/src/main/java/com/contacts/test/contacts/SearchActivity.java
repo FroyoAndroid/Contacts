@@ -36,7 +36,14 @@ public class SearchActivity extends Activity {
         setContentView(R.layout.search_pupil);
         pupilList = (ListView) findViewById(R.id.pupilList);
         searchView = (EditText) findViewById(R.id.searchPupil);
+        // listView
+        pupilList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                Log.d("Skill Object Data",""+pupil.get(position).getSkill().getBayParking());
+            }
+        });
         pupil = Pupil.listAll(Pupil.class);
         Log.d("Database", pupil.size() + "");
 
