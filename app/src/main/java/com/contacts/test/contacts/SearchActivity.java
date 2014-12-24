@@ -43,6 +43,7 @@ public class SearchActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             // This logic need to be chnaged to accomodtae searchList ItemClick
             Bundle b = new Bundle();
+            Log.d("Get ID",""+pupil.get(position).getId());
             b.putString("pupil_name",pupil.get(position).getName());
             b.putString("pupil_contact",pupil.get(position).getContact());
                 Intent i = new Intent(SearchActivity.this,EditPupilActivity.class);

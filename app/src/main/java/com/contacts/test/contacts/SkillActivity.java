@@ -35,9 +35,6 @@ public class SkillActivity extends Activity {
         llRating =(LinearLayout) findViewById(R.id.llRating);
         for (int i=0; i<competencies.length; i++){
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 50);
-
-
-
             /*
             TextView tempCompTV = new TextView(SkillActivity.this);
             RatingBar temp_ratingView = new RatingBar(SkillActivity.this);

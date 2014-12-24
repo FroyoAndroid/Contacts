@@ -33,7 +33,7 @@
             android:windowSoftInputMode="stateHidden">
         </activity>
         <activity
-            android:name="com.contacts.test.contacts.SkillActivity"
+            android:name="com.contacts.test.contacts.SkillActivitySecond"
             android:label="Skill Info"
             android:screenOrientation="portrait">
         </activity>

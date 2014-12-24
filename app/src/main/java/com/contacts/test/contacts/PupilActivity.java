@@ -36,7 +36,7 @@ public class PupilActivity extends Activity {
     EditText fullName, houseStreet, town, postcode, contact;
     RadioButton isFacebookFriend, isTheoryPassed, isTestBooked;
     Spinner testPassed, lessonHad;
-    Button back, addPupil, clearData,setDate;
+    Button back, addPupil, clearData,setDate,resetRadioBtns;
     List<String> lessonHadArray;
 
     @Override
@@ -73,7 +73,15 @@ public class PupilActivity extends Activity {
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
-
+        resetRadioBtns = (Button) findViewById(R.id.resetRadioBtns);
+        resetRadioBtns.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isFacebookFriend.setChecked(false);
+                isTheoryPassed.setChecked(false);
+                isTestBooked.setChecked(false);
+            }
+        });
         showDate(year, month+1, day);
         /**
          * back button
