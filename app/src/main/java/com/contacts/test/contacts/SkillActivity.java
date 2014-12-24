@@ -34,7 +34,7 @@ public class SkillActivity extends Activity {
         llCompetency = (LinearLayout) findViewById(R.id.llCompetency);
         llRating =(LinearLayout) findViewById(R.id.llRating);
         for (int i=0; i<competencies.length; i++){
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 50);
 
 
 
@@ -55,11 +55,11 @@ public class SkillActivity extends Activity {
             llCompetency.addView(tv);
 
             RatingBar rv = new RatingBar(this);
-
-            rv.setLayoutParams(params);
-            llRating.addView(rv);
             rv.setNumStars(5);
             rv.setStepSize(1.0f);
+            rv.setLayoutParams(params);
+            llRating.addView(rv);
+
             textViews.add(tv);
             ratingViews.add(rv);
 

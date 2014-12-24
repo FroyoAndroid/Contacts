@@ -150,7 +150,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Test Passed" />
+                android:hint="Test Passed"
+                android:layout_row="0" />
 
             <TextView
                 android:id="@+id/lessonHadLabel"

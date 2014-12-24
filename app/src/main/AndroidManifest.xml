@@ -37,6 +37,10 @@
             android:label="Skill Info"
             android:screenOrientation="portrait">
         </activity>
+        <activity
+            android:name="com.contacts.test.contacts.EditPupilActivity"
+            android:label="Edit"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

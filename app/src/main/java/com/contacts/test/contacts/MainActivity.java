@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
         contactPupil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),SearchActivity.class);
+                Intent i = new Intent(getApplicationContext(),SkillActivity.class);
                 startActivity(i);
             }
         });
@@ -44,7 +44,8 @@ public class MainActivity extends Activity {
         editPupil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),SkillActivity.class);
+
+                Intent i = new Intent(getApplicationContext(),SearchActivity.class);
                 startActivity(i);
             }
         });

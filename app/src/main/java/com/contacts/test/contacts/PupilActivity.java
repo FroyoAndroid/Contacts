@@ -73,6 +73,7 @@ public class PupilActivity extends Activity {
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
+
         showDate(year, month+1, day);
         /**
          * back button
@@ -120,7 +121,6 @@ public class PupilActivity extends Activity {
             public void onClick(View v) {
 
                try {
-                   Pupil object = new Pupil(fullName.getText().toString(), houseStreet.getText().toString(), town.getText().toString(), postcode.getText().toString(), contact.getText().toString(), isFacebookFriend.isChecked(), isTheoryPassed.isChecked(), isTestBooked.isChecked(), dateText.getText().toString(), testPassed.getSelectedItem().toString(), lessonHad.getSelectedItem().toString());
 
                    Skill skillObj = new Skill();
                    skillObj.setBayParking(0);
@@ -145,8 +145,7 @@ public class PupilActivity extends Activity {
                    skillObj.setParallelParking(0);
                    skillObj.setShowAndTell(0);
                    skillObj.setMockTests(0);
-                   object.setSkill(skillObj);
-                   skillObj.save();
+                   Pupil object = new Pupil(fullName.getText().toString(), houseStreet.getText().toString(), town.getText().toString(), postcode.getText().toString(), contact.getText().toString(), isFacebookFriend.isChecked(), isTheoryPassed.isChecked(), isTestBooked.isChecked(), dateText.getText().toString(), testPassed.getSelectedItem().toString(), lessonHad.getSelectedItem().toString(),skillObj);
                    object.save();
                }catch(Exception e ){
 

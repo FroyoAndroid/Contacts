@@ -33,7 +33,7 @@ public class Pupil extends SugarRecord<Pupil> {
     public Pupil() {
     }
 
-    public Pupil(String name, String houseStreet, String town, String postcode, String contact, Boolean isFacebookFriend, Boolean isTheoryPassed, Boolean isTestBooked, String testBookedDate, String testPassed, String lessonHad) {
+    public Pupil(String name, String houseStreet, String town, String postcode, String contact, Boolean isFacebookFriend, Boolean isTheoryPassed, Boolean isTestBooked, String testBookedDate, String testPassed, String lessonHad,Skill pskill) {
         this.name = name;
         this.houseStreet = houseStreet;
         this.town = town;
@@ -45,6 +45,7 @@ public class Pupil extends SugarRecord<Pupil> {
         this.testBookedDate = testBookedDate;
         this.testPassed = testPassed;
         this.lessonHad = lessonHad;
+        this.skill = pskill;
     }
 
     public String getName() {

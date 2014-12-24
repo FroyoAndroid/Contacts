@@ -1,6 +1,7 @@
 package com.contacts.test.contacts;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.text.Editable;
@@ -40,8 +41,14 @@ public class SearchActivity extends Activity {
         pupilList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            // This logic need to be chnaged to accomodtae searchList ItemClick
+            Bundle b = new Bundle();
+            b.putString("pupil_name",pupil.get(position).getName());
+            b.putString("pupil_contact",pupil.get(position).getContact());
+                Intent i = new Intent(SearchActivity.this,EditPupilActivity.class);
+                i.putExtra("pupil",b);
+                startActivity(i);
 
-                Log.d("Skill Object Data",""+pupil.get(position).getSkill().getBayParking());
             }
         });
         pupil = Pupil.listAll(Pupil.class);
