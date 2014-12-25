@@ -153,6 +153,7 @@ public class PupilActivity extends Activity {
                    skillObj.setParallelParking(0);
                    skillObj.setShowAndTell(0);
                    skillObj.setMockTests(0);
+                   skillObj.save();
                    Pupil object = new Pupil(fullName.getText().toString(), houseStreet.getText().toString(), town.getText().toString(), postcode.getText().toString(), contact.getText().toString(), isFacebookFriend.isChecked(), isTheoryPassed.isChecked(), isTestBooked.isChecked(), dateText.getText().toString(), testPassed.getSelectedItem().toString(), lessonHad.getSelectedItem().toString(),skillObj);
                    object.save();
                }catch(Exception e ){

@@ -2,28 +2,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
         android:id="@+id/skillListViewItemName"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:textAllCaps="true"
-        android:text="Skill Name"
-        android:padding="10dp"
         android:layout_toLeftOf="@+id/ratingBar"
         android:gravity="center_vertical"
-       >
+        android:padding="10dp"
+        android:text="Skill Name"
+        android:textAllCaps="true">
 
     </TextView>
 
     <RatingBar
+        android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:id="@+id/ratingBar"
         android:layout_alignParentRight="true"
         android:gravity="center_vertical"
         android:numStars="5"
         android:stepSize="1" />
 
 
-</TextView>
 </RelativeLayout>

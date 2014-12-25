@@ -40,12 +40,14 @@
             android:id="@+id/txtPostcode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:numeric="integer"
             android:hint="Postcode" />
 
         <EditText
             android:id="@+id/txtContactNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:numeric="integer"
             android:hint="Contact number" />
 
         <LinearLayout

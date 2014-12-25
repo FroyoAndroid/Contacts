@@ -1,23 +1,29 @@
 package com.contacts.test.contacts;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.contacts.test.util.Pupil;
 
+import java.util.Calendar;
 import java.util.List;
 
 /**
  * Created by CHAUHAN on 12/23/14.
  */
 public class EditPupilActivity extends Activity {
+    private Calendar calendar;
+    private int year,month,day;
     Button back,clear,setDate,savePupil,resetRadioBtns;
     RadioButton isFacebookFriend, isTheoryPassed, isTestBooked;
     boolean isFBFriend,isPassed,isBooked;
@@ -75,6 +81,10 @@ public class EditPupilActivity extends Activity {
         contact.setText(pupils.get(0).getContact());
         date =(TextView) findViewById(R.id.dateEdit);
         date.setText(pupils.get(0).getTestBookedDate());
+        calendar = Calendar.getInstance();
+        year = calendar.get(Calendar.YEAR);
+        month = calendar.get(Calendar.MONTH);
+        day = calendar.get(Calendar.DAY_OF_MONTH);
         /**
          * Back button code
          *
@@ -120,5 +130,33 @@ public class EditPupilActivity extends Activity {
 
             }
         });
+
+        /**
+         * Set date clicklistener
+         */
+        setDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog(999);
+            }
+        });
+    }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        if(id== 999){
+            return  new DatePickerDialog(this,myDateListener,year,month,day);
+        }
+        return null;
+    }
+    private DatePickerDialog.OnDateSetListener myDateListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            showDate(year,monthOfYear+1,dayOfMonth);
+        }
+    };
+
+    private void showDate(int year,int month, int day){
+        date.setText(new StringBuilder().append(day).append("/").append(month).append("/").append(year));
     }
 }
