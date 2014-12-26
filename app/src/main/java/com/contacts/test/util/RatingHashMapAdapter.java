@@ -44,8 +44,12 @@ public class RatingHashMapAdapter extends BaseAdapter {
         return position;
     }
 
+    public HashMap<String, Integer> getHashMap(){
+      return  mData;
+    }
+
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         String key = mKeys[position];
         float ratingValue = Float.parseFloat(getItem(position).toString());
         /*Log.d("Value",ratingValue+"");*/
@@ -55,6 +59,12 @@ public class RatingHashMapAdapter extends BaseAdapter {
         tvskillName.setText(key.toUpperCase());
         RatingBar skillRating = (RatingBar)convertView.findViewById(R.id.ratingBar);
         skillRating.setRating(ratingValue);
+        skillRating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                mData.put(mKeys[position],Math.round(rating));
+            }
+        });
         return convertView;
     }
 }
