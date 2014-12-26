@@ -41,7 +41,7 @@ public class PupilListAdapter extends ArrayAdapter<Pupil>{
             TextView textView = (TextView)convertView.findViewById(R.id.listitemTextView);
             textView.setText(obj.getName());
             return convertView;
-        //}return super.getView(position, convertView, parent);
+
     }
 
 

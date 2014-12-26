@@ -38,7 +38,7 @@ public class RatingAdapter extends BaseAdapter {
     Context context;
     Skill listSkill;
     int layoutResource;
-    HashMap skill;
+    HashMap<String,Integer> skill;
     String[] skillNames = new String[]{"Bay Parking", "Cockpit Drill", "Crossroads", "Defensive Driving", "Dual Carriageways",
             "Eco Driving", "Left Reverse", "Emergency Stop", "Mock Tests", "Meeting Situations", "Moving Away", "Show Tell",
             "One Way Streets", "Parallel Parking", "Round Abouts", "Pedestarian Crossing", "Stopping", "Turning Right", "Turning Left",
@@ -51,7 +51,7 @@ public class RatingAdapter extends BaseAdapter {
         this.context = context;
         this.listSkill = object;
         this.layoutResource = resource;
-        skill = new HashMap();
+        skill = new HashMap<String,Integer>();
         skill.put("Bay Parking", object.getBayParking());
         skill.put("Cockpit Drill", object.getCockpitDrill());
         skill.put("Crossroads", object.getCrossroads());
@@ -84,8 +84,8 @@ public class RatingAdapter extends BaseAdapter {
 
         if(convertView == null){
             //inflate  the layout
-            LayoutInflater infaltor = ((Activity) context).getLayoutInflater();
-            convertView = infaltor.inflate(layoutResource, parent, false);
+            LayoutInflater inflator = ((Activity) context).getLayoutInflater();
+            convertView = inflator.inflate(layoutResource, parent, false);
         }
 
         TextView tvskillName = (TextView)convertView.findViewById(R.id.skillListViewItemName);
