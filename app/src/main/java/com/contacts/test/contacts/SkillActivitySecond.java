@@ -80,18 +80,27 @@ public class SkillActivitySecond extends Activity {
         /**
          *Spinner onItemClickListener
          */
-        /*spinnerPupil.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+
+        /**
+         * spinner on item selected listener
+         */
+        spinnerPupil.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 object = listPupil.get(position).getSkill();
                 currentPupil = listPupil.get(position);
                 skill = getCurrentHashMap(object);
-                adapter.notifyDataSetChanged();
-                *//*adapter.notifyDataSetInvalidated();*//*
+                adapter = new RatingHashMapAdapter(SkillActivitySecond.this,skill);
+                skilListView.setAdapter(adapter);
             }
-        });*/
-        
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         /**
          * Save data click listener;
          */

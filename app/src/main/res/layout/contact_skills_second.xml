@@ -10,13 +10,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:padding="10dp"
+        style="@style/spinnerStyle"
         android:textAlignment="center">
     </Spinner>
     <ListView
         android:id="@+id/ratingList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/spinnerPupil">
+        android:layout_below="@+id/spinnerPupil"
+        android:layout_above="@+id/btnSaveData">
 
      </ListView>
     <Button
