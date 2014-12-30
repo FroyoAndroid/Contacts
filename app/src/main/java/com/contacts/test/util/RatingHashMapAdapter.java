@@ -13,17 +13,17 @@ import android.widget.TextView;
 import com.contacts.test.contacts.R;
 import com.contacts.test.contacts.SkillActivitySecond;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  * Created by nirajkumar.chauhan on 12/26/2014.
  */
 public class RatingHashMapAdapter extends BaseAdapter {
-    private HashMap<String, Integer> mData = new HashMap<String, Integer>();
+    private LinkedHashMap<String, Integer> mData = new LinkedHashMap<String, Integer>();
     private String[] mKeys;
     Context mContext;
 
-    public RatingHashMapAdapter(Context pContext, HashMap<String,Integer> data){
+    public RatingHashMapAdapter(Context pContext, LinkedHashMap<String,Integer> data){
         mData = data;
         mKeys = mData.keySet().toArray(new String[data.size()]);
         mContext = pContext;
@@ -44,7 +44,7 @@ public class RatingHashMapAdapter extends BaseAdapter {
         return position;
     }
 
-    public HashMap<String, Integer> getHashMap(){
+    public LinkedHashMap<String, Integer> getHashMap(){
       return  mData;
     }
 

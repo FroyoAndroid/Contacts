@@ -16,6 +16,7 @@ import com.contacts.test.util.Skill;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -30,7 +31,8 @@ public class SkillActivitySecond extends Activity {
     Button saveData;
     Skill object;
     Pupil currentPupil;
-    HashMap<String,Integer> skill;
+   /* HashMap<String,Integer> skill;*/
+    LinkedHashMap<String,Integer> skill;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,9 +52,10 @@ public class SkillActivitySecond extends Activity {
         object = listPupil.get(0).getSkill();
         currentPupil = listPupil.get(0);
 
-        skill = new HashMap<String,Integer>();
-       /* skill = getCurrentHashMap(object);*/
-        skill.put("Bay Parking", object.getBayParking());
+      /*  skill = new HashMap<String,Integer>();*/
+        skill = new LinkedHashMap<String,Integer>();
+        skill = getCurrentHashMap(object);
+        /*skill.put("Bay Parking", object.getBayParking());
         skill.put("Cockpit Drill", object.getCockpitDrill());
         skill.put("Crossroads", object.getCrossroads());
         skill.put("Defensive Driving", object.getDefensiveDriving());
@@ -73,7 +76,7 @@ public class SkillActivitySecond extends Activity {
         skill.put("Turning Left", object.getTurningLeft());
         skill.put("T Junction", object.gettJunction());
         skill.put("Using Mirrors", object.getUsingMirrors());
-        skill.put("Turn In The Road", object.getTurnInTheRoad());
+        skill.put("Turn In The Road", object.getTurnInTheRoad());*/
         adapter = new RatingHashMapAdapter(this,skill);
         skilListView.setAdapter(adapter);
 
@@ -108,28 +111,28 @@ public class SkillActivitySecond extends Activity {
             @Override
             public void onClick(View v) {
                 skill = adapter.getHashMap();
-                object.setBayParking(skill.get("Bay Parking"));
                 object.setCockpitDrill(skill.get("Cockpit Drill"));
-                object.setCrossroads(skill.get("Crossroads"));
-                object.setDefensiveDriving(skill.get("Defensive Driving"));
-                object.setDualCarriageways(skill.get("Dual Carriageways"));
-                object.setEcoDriving(skill.get("Eco Driving"));
-                object.setLeftReverse(skill.get("Left Reverse"));
-                object.setEmergencyStop(skill.get("Emergency Stop"));
-                object.setMockTests(skill.get("Mock Tests"));
-                object.setMeetingSituations(skill.get("Meeting Situations"));
                 object.setMovingAway(skill.get("Moving Away"));
-                object.setShowAndTell(skill.get("Show Tell"));
-                object.setOneWayStreets(skill.get("One Way Streets"));
-                object.setParallelParking(skill.get("Parallel Parking"));
+                object.setStopping(skill.get("Stopping"));
+                object.setTurningLeft(skill.get("Turning Left"));
+                object.setTurningRight(skill.get("Turning Right"));
+                object.settJunction(skill.get("T Junction"));
+                object.setCrossroads(skill.get("Crossroads"));
                 object.setRoundabouts(skill.get("Round Abouts"));
                 object.setPedestarianCrossing(skill.get("Pedestarian Crossing"));
-                object.setStopping(skill.get("Stopping"));
-                object.setTurningRight(skill.get("Turning Right"));
-                object.setTurningLeft(skill.get("Turning Left"));
-                object.settJunction(skill.get("T Junction"));
+                object.setEmergencyStop(skill.get("Emergency Stop"));
                 object.setUsingMirrors(skill.get("Using Mirrors"));
+                object.setDualCarriageways(skill.get("Dual Carriageways"));
+                object.setOneWayStreets(skill.get("One Way Streets"));
+                object.setMeetingSituations(skill.get("Meeting Situations"));
+                object.setDefensiveDriving(skill.get("Defensive Driving"));
+                object.setEcoDriving(skill.get("Eco Driving"));
                 object.setTurnInTheRoad(skill.get("Turn In The Road"));
+                object.setParallelParking(skill.get("Parallel Parking"));
+                object.setLeftReverse(skill.get("Left Reverse"));
+                object.setBayParking(skill.get("Bay Parking"));
+                object.setShowAndTell(skill.get("Independent Driving"));
+                object.setMockTests(skill.get("Mock Tests"));
                 object.save();
 
             }
@@ -138,30 +141,31 @@ public class SkillActivitySecond extends Activity {
 
     }
     
-    public HashMap<String , Integer> getCurrentHashMap(Skill pSkill){
-        HashMap<String, Integer> mHashMap = new HashMap<String , Integer>();
-        mHashMap.put("Bay Parking", pSkill.getBayParking());
+    public LinkedHashMap<String , Integer> getCurrentHashMap(Skill pSkill){
+        LinkedHashMap<String, Integer> mHashMap = new LinkedHashMap<String , Integer>();
+
         mHashMap.put("Cockpit Drill", pSkill.getCockpitDrill());
-        mHashMap.put("Crossroads", pSkill.getCrossroads());
-        mHashMap.put("Defensive Driving", pSkill.getDefensiveDriving());
-        mHashMap.put("Dual Carriageways", pSkill.getDualCarriageways());
-        mHashMap.put("Eco Driving", pSkill.getEcoDriving());
-        mHashMap.put("Left Reverse", pSkill.getLeftReverse());
-        mHashMap.put("Emergency Stop", pSkill.getEmergencyStop());
-        mHashMap.put("Mock Tests", pSkill.getMockTests());
-        mHashMap.put("Meeting Situations", pSkill.getMeetingSituations());
         mHashMap.put("Moving Away", pSkill.getMovingAway());
-        mHashMap.put("Show Tell", pSkill.getShowAndTell());
-        mHashMap.put("One Way Streets", pSkill.getOneWayStreets());
-        mHashMap.put("Parallel Parking", pSkill.getParallelParking());
+        mHashMap.put("Stopping", pSkill.getStopping());
+        mHashMap.put("Turning Left", pSkill.getTurningLeft());
+        mHashMap.put("Turning Right", pSkill.getTurningRight());
+        mHashMap.put("T Junction", pSkill.gettJunction());
+        mHashMap.put("Crossroads", pSkill.getCrossroads());
         mHashMap.put("Round Abouts", pSkill.getRoundabouts());
         mHashMap.put("Pedestarian Crossing", pSkill.getPedestarianCrossing());
-        mHashMap.put("Stopping", pSkill.getStopping());
-        mHashMap.put("Turning Right", pSkill.getTurningRight());
-        mHashMap.put("Turning Left", pSkill.getTurningLeft());
-        mHashMap.put("T Junction", pSkill.gettJunction());
+        mHashMap.put("Emergency Stop", pSkill.getEmergencyStop());
         mHashMap.put("Using Mirrors", pSkill.getUsingMirrors());
+        mHashMap.put("Dual Carriageways", pSkill.getDualCarriageways());
+        mHashMap.put("One Way Streets", pSkill.getOneWayStreets());
+        mHashMap.put("Meeting Situations", pSkill.getMeetingSituations());
+        mHashMap.put("Defensive Driving", pSkill.getDefensiveDriving());
+        mHashMap.put("Eco Driving", pSkill.getEcoDriving());
         mHashMap.put("Turn In The Road", pSkill.getTurnInTheRoad());
+        mHashMap.put("Parallel Parking", pSkill.getParallelParking());
+        mHashMap.put("Left Reverse", pSkill.getLeftReverse());
+        mHashMap.put("Bay Parking", pSkill.getBayParking());
+        mHashMap.put("Independent Driving", pSkill.getShowAndTell());
+        mHashMap.put("Mock Tests", pSkill.getMockTests());
         return  mHashMap;
     }
 }

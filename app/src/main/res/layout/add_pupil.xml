@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Postcode"
-            android:numeric="integer" />
+             />
 
         <EditText
             android:id="@+id/txtContactNumber"
