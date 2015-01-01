@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.contacts.test.util.Pupil;
 import com.contacts.test.util.RatingAdapter;
@@ -42,6 +43,11 @@ public class SkillActivitySecond extends Activity {
         saveData = (Button) findViewById(R.id.btnSaveData);
         listPupil = new ArrayList<Pupil>();
         listPupil = Pupil.listAll(Pupil.class);
+        if(listPupil.size() == 0){
+
+            Toast.makeText(this.getApplicationContext(),"No Contacts in database!!!",Toast.LENGTH_SHORT).show();
+            finish();
+        }
         List<String> list = new ArrayList<String>();
         for(int i=0;i<listPupil.size();i++){
             list.add(listPupil.get(i).getName());
@@ -110,6 +116,7 @@ public class SkillActivitySecond extends Activity {
         saveData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try{
                 skill = adapter.getHashMap();
                 object.setCockpitDrill(skill.get("Cockpit Drill"));
                 object.setMovingAway(skill.get("Moving Away"));
@@ -134,6 +141,10 @@ public class SkillActivitySecond extends Activity {
                 object.setShowAndTell(skill.get("Independent Driving"));
                 object.setMockTests(skill.get("Mock Tests"));
                 object.save();
+                    Toast.makeText(getApplicationContext(),"Ratings saved successfully!!!",Toast.LENGTH_SHORT).show();
+                }catch(Exception e){
+                    Toast.makeText(getApplicationContext(),"Error while writing to database.",Toast.LENGTH_SHORT).show();
+                }
 
             }
         });

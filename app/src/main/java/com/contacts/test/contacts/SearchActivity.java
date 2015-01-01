@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.contacts.test.util.Pupil;
 import com.contacts.test.util.PupilListAdapter;
@@ -30,7 +31,11 @@ public class SearchActivity extends Activity {
     EditText searchView;
     ListView pupilList;
     List<Pupil> pupil;
-
+    PupilListAdapter adapter;
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +60,7 @@ public class SearchActivity extends Activity {
         pupil = Pupil.listAll(Pupil.class);
         Log.d("Database", pupil.size() + "");
 
-        final PupilListAdapter adapter = new PupilListAdapter(this, R.layout.pupil_list_item, pupil);
+        adapter = new PupilListAdapter(this, R.layout.pupil_list_item, pupil);
         pupilList.setAdapter(adapter);
 
         searchView.addTextChangedListener(new TextWatcher() {
@@ -75,8 +80,8 @@ public class SearchActivity extends Activity {
                         }
                     }
                 }
-                final PupilListAdapter mAdapter = new PupilListAdapter(SearchActivity.this, R.layout.pupil_list_item, tempArrayList);
-                pupilList.setAdapter(mAdapter);
+                adapter = new PupilListAdapter(SearchActivity.this, R.layout.pupil_list_item, tempArrayList);
+                pupilList.setAdapter(adapter);
             }
 
             @Override
@@ -86,6 +91,29 @@ public class SearchActivity extends Activity {
         });
 
     }
-
+    /**
+     *   Edit Contact
+     */
+    public void editContact(View v){
+        //Toast.makeText(this,"Edit Contact clicked",Toast.LENGTH_SHORT).show();
+        Bundle b = new Bundle();
+        //Log.d("Get ID",""+pupil.get(position).getId());
+        Pupil itemToEdit= (Pupil) v.getTag();
+        b.putString("pupil_name",itemToEdit.getName());
+        b.putString("pupil_contact",itemToEdit.getContact());
+        Intent i = new Intent(SearchActivity.this,EditPupilActivity.class);
+        i.putExtra("pupil",b);
+        startActivity(i);
+    }
+    /**
+     * Delete Contact
+     */
+    public void deleteContact(View v){
+        Pupil itemToRemove= (Pupil) v.getTag();
+        itemToRemove.delete();
+        adapter.remove(itemToRemove);
+        adapter.notifyDataSetChanged();
+        Toast.makeText(this,"Contact deleted successfully !!!",Toast.LENGTH_SHORT).show();
+    }
 
 }

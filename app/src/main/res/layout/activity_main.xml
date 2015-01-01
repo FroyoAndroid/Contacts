@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center_vertical|center_horizontal"
+    android:background="@drawable/background"
+    android:gravity="center_vertical|center_horizontal"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -14,10 +15,13 @@
         android:id="@+id/mainmenuButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_centerHorizontal="true"
-        android:drawableTop="@drawable/ic_launcher"
-        android:text="@string/mainmenuButton1" />
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/adduser"
+        android:text="@string/mainmenuButton1"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:typeface="monospace" />
 
     <Button
         android:id="@+id/mainmenubutton2"
@@ -26,17 +30,24 @@
         android:layout_below="@+id/mainmenuButton1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="42dp"
-        android:drawableTop="@drawable/ic_edit"
-        android:text="@string/mainmenuButton2" />
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/edituser"
+        android:text="@string/mainmenuButton2"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:typeface="monospace" />
 
     <Button
         android:id="@+id/mainmenubutton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_below="@+id/mainmenubutton2"
-        android:layout_marginTop="42dp"
         android:layout_centerHorizontal="true"
-        android:drawableTop="@drawable/ic_skill"
-        android:text="@string/mainmenuButton3" />
+        android:layout_marginTop="42dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/rateskill"
+        android:text="@string/mainmenuButton3"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:typeface="monospace" />
 </RelativeLayout>

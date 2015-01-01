@@ -38,7 +38,7 @@ public class PupilActivity extends Activity {
     Spinner testPassed, lessonHad;
     Button back, addPupil, clearData,setDate,resetRadioBtns;
     List<String> lessonHadArray;
-
+    private Context mContext;
     @Override
     protected Dialog onCreateDialog(int id) {
         if(id== 999){
@@ -73,6 +73,7 @@ public class PupilActivity extends Activity {
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
+        mContext = this;
         resetRadioBtns = (Button) findViewById(R.id.resetRadioBtns);
         resetRadioBtns.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,9 +157,10 @@ public class PupilActivity extends Activity {
                    skillObj.save();
                    Pupil object = new Pupil(fullName.getText().toString(), houseStreet.getText().toString(), town.getText().toString(), postcode.getText().toString(), contact.getText().toString(), isFacebookFriend.isChecked(), isTheoryPassed.isChecked(), isTestBooked.isChecked(), dateText.getText().toString(), testPassed.getSelectedItem().toString(), lessonHad.getSelectedItem().toString(),skillObj);
                    object.save();
+                   Toast.makeText(mContext,"Contact saved successfully.",Toast.LENGTH_SHORT).show();
                }catch(Exception e ){
 
-                   Toast.makeText(getApplicationContext(),"Error while writing it to Database",Toast.LENGTH_LONG).show();
+                   Toast.makeText(mContext,"Error while writing to Database",Toast.LENGTH_LONG).show();
 
                }
             }
