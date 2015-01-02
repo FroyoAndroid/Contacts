@@ -57,6 +57,8 @@ public class SearchActivity extends Activity {
 
             }
         });
+
+
         pupil = Pupil.listAll(Pupil.class);
         Log.d("Database", pupil.size() + "");
 

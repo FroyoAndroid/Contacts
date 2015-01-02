@@ -1,6 +1,9 @@
 package com.contacts.test.contacts;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -44,9 +47,24 @@ public class SkillActivitySecond extends Activity {
         listPupil = new ArrayList<Pupil>();
         listPupil = Pupil.listAll(Pupil.class);
         if(listPupil.size() == 0){
-
-            Toast.makeText(this.getApplicationContext(),"No Contacts in database!!!",Toast.LENGTH_SHORT).show();
-            finish();
+            Toast.makeText(this.getApplicationContext(),"No Contacts in database!!!",Toast.LENGTH_LONG).show();
+            Intent i = new Intent(SkillActivitySecond.this,MainActivity.class);
+            startActivity(i);
+            this.finish();
+            /*AlertDialog.Builder builder = new AlertDialog.Builder(SkillActivitySecond.this);
+            // Add the buttons
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
+                public void onClick(DialogInterface dialog, int id) {
+                    // User clicked OK button
+                    Intent i = new Intent(SkillActivitySecond.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+            });
+            builder.setMessage("No Cotacts!!!").setTitle("Alert");
+                // Create the AlertDialog
+            AlertDialog dialog = builder.create();
+            dialog.show();*/
         }
         List<String> list = new ArrayList<String>();
         for(int i=0;i<listPupil.size();i++){
