@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Contacts</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">hADIt</string>
+    <string name="app_description">Helpful Advanced Driving Instructor Tool.</string>
     <string name="action_settings">Settings</string>
 
     <string-array name="competency">
@@ -49,6 +49,10 @@
     <string name="mainmenuButton1">Add Contact</string>
     <string name="mainmenuButton2">Edit Contact</string>
     <string name="mainmenuButton3">Contact Skills</string>
+    <string name="mainmenuButton4">Calendar Event</string>
+    <string name="mainmenuButton5">Competencies</string>
+    <string name="mainmenuButton6">Settings</string>
+
 
     <string name="contactskillsButton1">Save</string>
 
