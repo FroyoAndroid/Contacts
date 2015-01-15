@@ -28,13 +28,14 @@ import java.util.List;
  */
 public class SkillActivitySecond extends Activity {
     RatingHashMapAdapter adapter;
-    Spinner spinnerPupil;
+    Spinner spinnerPupil, testPassed, lessonHad;
     List<Pupil> listPupil;
     List<String> listPupilName;
     ListView skilListView;
     Button saveData;
     Skill object;
     Pupil currentPupil;
+    List<String> lessonHadArray;
    /* HashMap<String,Integer> skill;*/
     LinkedHashMap<String,Integer> skill;
     @Override
@@ -42,6 +43,8 @@ public class SkillActivitySecond extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contact_skills_second);
         spinnerPupil = (Spinner) findViewById(R.id.spinnerPupil);
+        testPassed =  (Spinner) findViewById(R.id.testPassed);
+        lessonHad =  (Spinner) findViewById(R.id.lessonsHad);
         skilListView = (ListView)findViewById(R.id.ratingList);
         saveData = (Button) findViewById(R.id.btnSaveData);
         listPupil = new ArrayList<Pupil>();
@@ -66,6 +69,16 @@ public class SkillActivitySecond extends Activity {
             AlertDialog dialog = builder.create();
             dialog.show();*/
         }
+        lessonHadArray = new ArrayList<String>();
+        for (int i = 0; i <= 100; i++) {
+            lessonHadArray.add("" + i);
+        }
+        ArrayAdapter<CharSequence> testPassedAdapter = ArrayAdapter.createFromResource(this, R.array.testPassed, android.R.layout.simple_spinner_item);
+        testPassedAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        testPassed.setAdapter(testPassedAdapter);
+        ArrayAdapter<String> lessonHadAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lessonHadArray);
+        lessonHadAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        lessonHad.setAdapter(lessonHadAdapter);
         List<String> list = new ArrayList<String>();
         for(int i=0;i<listPupil.size();i++){
             list.add(listPupil.get(i).getName());
