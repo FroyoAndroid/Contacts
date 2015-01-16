@@ -75,7 +75,7 @@
     <string name="tJunction">There will be a description here about this subject.</string>
     <string name="crossRoads">There will be a description here about this subject.</string>
     <string name="roundAbouts">There will be a description here about this subject.</string>
-    <string name="pedestarianCrossing">There will be a description here about this subject.</string>
+    <string name="pedestrianCrossing">There will be a description here about this subject.</string>
     <string name="emergencyStop">There will be a description here about this subject.</string>
     <string name="usingMirrors">There will be a description here about this subject.</string>
     <string name="dualCarriageways">There will be a description here about this subject.</string>
@@ -87,6 +87,6 @@
     <string name="parallelParking">There will be a description here about this subject.</string>
     <string name="leftReverse">There will be a description here about this subject.</string>
     <string name="bayParking">There will be a description here about this subject.</string>
-    <string name="independentDriving">There will be a description here about this subject.</string>
+    <string name="showAndTell">There will be a description here about this subject.</string>
     <string name="mockTests">There will be a description here about this subject.</string>
 </resources>
