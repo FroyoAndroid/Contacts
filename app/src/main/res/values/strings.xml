@@ -42,6 +42,7 @@
         <item>9th</item>
         <item>10th</item>
     </string-array>
+
     <string name="radiobtn1">Facebook Friend</string>
     <string name="radiobtn2">Theory Passed</string>
     <string name="radiobtn3">Test Booked</string>
@@ -67,8 +68,9 @@
 
     <string name="btnCancel">Cancel</string>
 
+
+    <string name="cockpitDrill">There will be a description here about this subject.</string>
     <string name="movingAway">You should be able to demonstrate good control when Moving away from the side of the road, from behind a parked car and on a gradient. Mirrors and blind spots checks should be carried out prior to moving.</string>
-    <string name="cockpitDrill"></string>
     <string name="stopping">You must identify a Safe, Legal and Convenient place to stop the car on the left. Use appropriate mirrors and signal correctly your intentions to others and then slow the vehicle under control and finish parallel with the curb about a door mirror width away.</string>
     <string name="turningLeft">Identify the road on the left, check mirrors correctly and signal to inform others of your intentions. Slow vehicle on approach to junction paying attention to other vehicles and pedestrians and cyclists. Select appropriate gear and check new road before turning.</string>
     <string name="turningRight">Identify the road on the right, check mirrors correctly and signal to inform others of your intentions. Slow vehicle on approach to junction while moving towards just left of the centre of road, paying attention to others and Priorities. Select appropriate gear and check new road before turning.</string>
@@ -89,4 +91,6 @@
     <string name="bayParking">There will be a description here about this subject.</string>
     <string name="showAndTell">There will be a description here about this subject.</string>
     <string name="mockTests">There will be a description here about this subject.</string>
+
+    <!-- Drawables for skills -all names here -->
 </resources>
