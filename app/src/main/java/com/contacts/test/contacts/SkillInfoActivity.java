@@ -36,10 +36,11 @@ public class SkillInfoActivity extends Activity {
             }
         });
         skillListView = (ListView) findViewById(R.id.skillInfoListView);
-        skills = new String[]{"cockpitDrill", "movingAway", "stopping", "turningLeft", "turningRight", "tJunction", "crossRoads", "roundAbouts", "pedestarianCrossing", "emergencyStop", "usingMirrors", "dualCarriageways", "oneWayStreets", "meetingSituations", "defensiveDriving", "ecoDriving", "turnInTheRoads", "parallelParking", "leftReverse", "bayParking", "independentDriving", "mockTests"};
+        skills = new String[]{"cockpitDrill", "movingAway", "stopping", "turningLeft", "turningRight", "tJunction", "crossRoads", "roundAbouts", "pedestrianCrossing", "emergencyStop", "usingMirrors", "dualCarriageways", "oneWayStreets", "meetingSituations", "defensiveDriving", "ecoDriving", "turnInTheRoads", "parallelParking", "leftReverse", "bayParking", "showAndTell", "mockTests"};
         hashMap = new LinkedHashMap<String, String>();
         for (int i = 0; i < skills.length; i++) {
-            hashMap.put(skills[i], getStringResourceByName(skills[i]));
+           /* Log.d("SKill Info Name",  getStringResourceByName(skills[i]));*/
+            hashMap.put(skills[i], getStringResourceByName(skills[i].toString()));
         }
 
         /*Log.d("Size",  getStringResourceByName("cockpitDrill"));*/

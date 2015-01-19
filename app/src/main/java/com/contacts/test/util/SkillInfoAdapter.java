@@ -48,6 +48,7 @@ public class SkillInfoAdapter extends BaseAdapter {
         convertView = inflator.inflate(R.layout.activity_skill_info_item,parent,false);
         TextView skillName = (TextView)convertView.findViewById(R.id.skillName);
         skillName.setText(key.toUpperCase());
+
         return convertView;
     }
 }
