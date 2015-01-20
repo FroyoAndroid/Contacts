@@ -68,6 +68,7 @@
 
     <string name="btnCancel">Cancel</string>
 
+    <string name="btnDialogCancel">Got It!!!</string>
 
     <string name="cockpitDrill">There will be a description here about this subject.</string>
     <string name="movingAway">You should be able to demonstrate good control when Moving away from the side of the road, from behind a parked car and on a gradient. Mirrors and blind spots checks should be carried out prior to moving.</string>
