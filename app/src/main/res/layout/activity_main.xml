@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,47 +7,98 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/mainmenuButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/adduser"
+            android:text="@string/mainmenuButton1"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:typeface="monospace" />
+
+        <Button
+            android:id="@+id/mainmenubutton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainmenuButton1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/edituser"
+            android:text="@string/mainmenuButton2"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:typeface="monospace" />
+
+        <Button
+            android:id="@+id/mainmenubutton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainmenubutton2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/rateskill"
+            android:text="@string/mainmenuButton3"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:typeface="monospace" />
+
+        <Button
+            android:id="@+id/mainmenubutton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainmenubutton3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp"
+            android:background="@android:color/transparent"
+            android:text="@string/mainmenuButton4"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:typeface="monospace" />
+
+        <Button
+            android:id="@+id/mainmenubutton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainmenubutton4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp"
+            android:background="@android:color/transparent"
+            android:text="@string/mainmenuButton5"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:typeface="monospace" />
+
+        <Button
+            android:id="@+id/mainmenubutton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainmenubutton5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp"
+            android:background="@android:color/transparent"
+            android:text="@string/mainmenuButton6"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:typeface="monospace" />
+    </RelativeLayout>
+</ScrollView>
 
 
-    <Button
-        android:id="@+id/mainmenuButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:background="@android:color/transparent"
-        android:drawableTop="@drawable/adduser"
-        android:text="@string/mainmenuButton1"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:typeface="monospace" />
-
-    <Button
-        android:id="@+id/mainmenubutton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/mainmenuButton1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
-        android:background="@android:color/transparent"
-        android:drawableTop="@drawable/edituser"
-        android:text="@string/mainmenuButton2"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:typeface="monospace" />
-
-    <Button
-        android:id="@+id/mainmenubutton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/mainmenubutton2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
-        android:background="@android:color/transparent"
-        android:drawableTop="@drawable/rateskill"
-        android:text="@string/mainmenuButton3"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:typeface="monospace" />
-</RelativeLayout>
+    <!--android:gravity="center_vertical|center_horizontal"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"-->

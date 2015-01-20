@@ -11,7 +11,7 @@ import android.widget.Button;
 
 
 public class MainActivity extends Activity {
-    Button addPupil,editPupil,contactPupil;
+    Button addPupil,editPupil,contactPupil,skillInfo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
         addPupil = (Button) findViewById(R.id.mainmenuButton1);
         editPupil = (Button) findViewById(R.id.mainmenubutton2);
         contactPupil = (Button) findViewById(R.id.mainmenubutton3);
-
+        skillInfo = (Button) findViewById(R.id.mainmenubutton5);
 
         //add pupil click listener
         addPupil.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
         contactPupil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),SkillInfoActivity.class);
+                Intent i = new Intent(getApplicationContext(),SkillActivitySecond.class);
                 startActivity(i);
             }
         });
@@ -46,6 +46,15 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
 
                 Intent i = new Intent(getApplicationContext(),SearchActivity.class);
+                startActivity(i);
+            }
+        });
+
+        //Skill info click listener
+        skillInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(getApplicationContext(),SkillInfoActivity.class);
                 startActivity(i);
             }
         });

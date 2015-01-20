@@ -2,6 +2,7 @@ package com.contacts.test.util;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,17 +19,19 @@ import java.util.LinkedHashMap;
 public class SkillInfoAdapter extends BaseAdapter {
     private LinkedHashMap<String, String> mData = new LinkedHashMap<String,String>();
     private String[] mKeys;
-    Context context;
+    Context mContext;
+    LayoutInflater inflator;
 
-    public SkillInfoAdapter(LinkedHashMap<String, String> mData,Context context) {
+    public SkillInfoAdapter(LinkedHashMap<String, String> mData, Context mContext) {
         this.mData = mData;
-        this.mKeys =mData.keySet().toArray(new String[mData.size()]);
-        this.context = context;
+        this.mKeys =  mData.keySet().toArray(new String[mData.size()]);
+        this.mContext = mContext;
+        inflator = LayoutInflater.from(this.mContext);
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return mData.size();
     }
 
     @Override
@@ -42,13 +45,23 @@ public class SkillInfoAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        String key = mKeys[position];
-        LayoutInflater inflator = ((Activity)context).getLayoutInflater();
-        convertView = inflator.inflate(R.layout.activity_skill_info_item,parent,false);
-        TextView skillName = (TextView)convertView.findViewById(R.id.skillName);
-        skillName.setText(key.toUpperCase());
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        MyViewHolder mViewHolder;
+        if(convertView == null){
+            convertView = inflator.inflate(R.layout.activity_skill_info_item,null);
+            mViewHolder = new MyViewHolder();
+            convertView.setTag(mViewHolder);
+        }else{
+            mViewHolder = (MyViewHolder) convertView.getTag();
+        }
 
+        mViewHolder.skillName = (TextView) convertView.findViewById(R.id.skillName);
+        String pattern = "(\\w)(\\s+)([\\.,])";
+        mViewHolder.skillName.setText(mKeys[position].toUpperCase());
         return convertView;
+    }
+
+    private static class MyViewHolder{
+        TextView skillName;
     }
 }

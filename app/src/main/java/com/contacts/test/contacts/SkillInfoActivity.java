@@ -43,8 +43,8 @@ public class SkillInfoActivity extends Activity {
             hashMap.put(skills[i], getStringResourceByName(skills[i].toString()));
         }
 
-        /*Log.d("Size",  getStringResourceByName("cockpitDrill"));*/
-        adapter = new SkillInfoAdapter(hashMap,SkillInfoActivity.this);
+        Log.d("Size",  ""+hashMap.size());
+        adapter = new SkillInfoAdapter(hashMap,this);
         skillListView.setAdapter(adapter);
 
     }
