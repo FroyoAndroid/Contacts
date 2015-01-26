@@ -60,7 +60,7 @@ public class SkillInfoActivity extends Activity {
                 Log.d("Competency Info",hashMap.get(skills[position]));
                 final Dialog dialog = new Dialog(mContext);
                 dialog.setTitle("Description...");
-
+                dialog.setContentView(R.layout.dialog_skill_info);
                 //setting the custom dialog component
                 EditText skillInfoDetailText = (EditText)dialog.findViewById(R.id.skillInfoDetail);
                 skillInfoDetailText.setText(hashMap.get(skills[position]),null);
