@@ -49,6 +49,10 @@
             android:name="com.contacts.test.contacts.SkillInfoActivity"
             android:label="Skill Info"
             android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.contacts.test.contacts.SettingActivity"
+            android:label="Settings"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
