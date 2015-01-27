@@ -3,6 +3,7 @@ package com.contacts.test.contacts;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.Button;
 
 
 public class MainActivity extends Activity {
-    Button addPupil,editPupil,contactPupil,skillInfo;
+    Button addPupil,editPupil,contactPupil,skillInfo,addEvent,settings;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,8 @@ public class MainActivity extends Activity {
         editPupil = (Button) findViewById(R.id.mainmenubutton2);
         contactPupil = (Button) findViewById(R.id.mainmenubutton3);
         skillInfo = (Button) findViewById(R.id.mainmenubutton5);
+        addEvent = (Button) findViewById(R.id.mainmenubutton4);
+        settings = (Button) findViewById(R.id.mainmenubutton6);
 
         //add pupil click listener
         addPupil.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +59,28 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent i =new Intent(getApplicationContext(),SkillInfoActivity.class);
                 startActivity(i);
+            }
+        });
+
+        //add Event
+        addEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // ACTION_INSERT does not work on all phones
+                // use  Intent.ACTION_EDIT in this case
+                Intent intent = new Intent(Intent.ACTION_INSERT);
+                intent.setData(CalendarContract.Events.CONTENT_URI);
+                startActivity(intent);
+
+            }
+        });
+
+        // settings
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SettingActivity.class);
+                startActivity(intent);
             }
         });
     }

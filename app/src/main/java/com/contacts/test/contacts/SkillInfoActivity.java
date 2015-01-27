@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.contacts.test.util.SkillInfoAdapter;
 
@@ -28,12 +29,12 @@ public class SkillInfoActivity extends Activity {
     Button backButton;
     ListView skillListView;
     SkillInfoAdapter adapter;
-    Context mContext;
+   final  Context mContext=this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skill_info);
-        mContext = this;
+
         backButton = (Button) findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,13 +58,14 @@ public class SkillInfoActivity extends Activity {
         skillListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("Competency Info",hashMap.get(skills[position]));
+                Log.d("Competency Info", hashMap.get(skills[position]));
+                String skillInfoText = hashMap.get(skills[position]);
                 final Dialog dialog = new Dialog(mContext);
                 dialog.setTitle("Description...");
                 dialog.setContentView(R.layout.dialog_skill_info);
                 //setting the custom dialog component
-                EditText skillInfoDetailText = (EditText)dialog.findViewById(R.id.skillInfoDetail);
-                skillInfoDetailText.setText(hashMap.get(skills[position]),null);
+                TextView skillInfoDetailText = (TextView) dialog.findViewById(R.id.skillInfoDetail);
+                skillInfoDetailText.setText(skillInfoText);
                 ImageView skilImage = (ImageView) dialog.findViewById(R.id.skillInfoImage);
                 Button dialogClose = (Button) dialog.findViewById(R.id.dialogClose);
                 dialogClose.setOnClickListener(new View.OnClickListener() {
