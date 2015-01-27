@@ -3,15 +3,16 @@ package com.contacts.test.contacts;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.CharacterPickerDialog;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 
-
 public class MainActivity extends Activity {
-    Button addPupil,editPupil,contactPupil,skillInfo;
+    Button addPupil, editPupil, contactPupil, skillInfo, calendarEvent, settings;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,12 +21,13 @@ public class MainActivity extends Activity {
         editPupil = (Button) findViewById(R.id.mainmenubutton2);
         contactPupil = (Button) findViewById(R.id.mainmenubutton3);
         skillInfo = (Button) findViewById(R.id.mainmenubutton5);
-
+        calendarEvent = (Button) findViewById(R.id.mainmenubutton4);
+        settings = (Button) findViewById(R.id.mainmenubutton6);
         //add pupil click listener
         addPupil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),PupilActivity.class);
+                Intent i = new Intent(getApplicationContext(), PupilActivity.class);
                 startActivity(i);
             }
         });
@@ -35,7 +37,7 @@ public class MainActivity extends Activity {
         contactPupil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),SkillActivitySecond.class);
+                Intent i = new Intent(getApplicationContext(), SkillActivitySecond.class);
                 startActivity(i);
             }
         });
@@ -45,7 +47,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getApplicationContext(),SearchActivity.class);
+                Intent i = new Intent(getApplicationContext(), SearchActivity.class);
                 startActivity(i);
             }
         });
@@ -54,8 +56,24 @@ public class MainActivity extends Activity {
         skillInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i =new Intent(getApplicationContext(),SkillInfoActivity.class);
+                Intent i = new Intent(getApplicationContext(), SkillInfoActivity.class);
                 startActivity(i);
+            }
+        });
+
+        //calendar events
+        calendarEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        //settings activity
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }
@@ -82,7 +100,6 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-
 
 
 }
