@@ -30,26 +30,28 @@ import java.util.Locale;
 public class PupilActivity extends Activity {
     private DatePicker datePicker;
     private Calendar calendar;
-    private int year,month,day;
-    boolean isFBFriend,isPassed,isBooked;
+    private int year, month, day;
+    boolean isFBFriend, isPassed, isBooked;
     TextView dateText;
     EditText fullName, houseStreet, town, postcode, contact;
     RadioButton isFacebookFriend, isTheoryPassed, isTestBooked;
     Spinner testPassed, lessonHad;
-    Button back, addPupil, clearData,setDate,resetRadioBtns;
+    Button back, addPupil, clearData, setDate, resetRadioBtns;
     List<String> lessonHadArray;
     private Context mContext;
+
     @Override
     protected Dialog onCreateDialog(int id) {
-        if(id== 999){
-            return  new DatePickerDialog(this,myDateListener,year,month,day);
+        if (id == 999) {
+            return new DatePickerDialog(this, myDateListener, year, month, day);
         }
         return null;
     }
+
     private DatePickerDialog.OnDateSetListener myDateListener = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-            showDate(year,monthOfYear+1,dayOfMonth);
+            showDate(year, monthOfYear + 1, dayOfMonth);
         }
     };
 
@@ -64,11 +66,11 @@ public class PupilActivity extends Activity {
         contact = (EditText) findViewById(R.id.txtContactNumber);
         testPassed = (Spinner) findViewById(R.id.testPassed);
         lessonHad = (Spinner) findViewById(R.id.lessonsHad);
-        dateText = (TextView)findViewById(R.id.dateEdit);
+        dateText = (TextView) findViewById(R.id.dateEdit);
         isFacebookFriend = (RadioButton) findViewById(R.id.radiobtnfacebook);
         isTheoryPassed = (RadioButton) findViewById(R.id.radiobtnTheoryPassed);
         isTestBooked = (RadioButton) findViewById(R.id.radiobtnTestBooked);
-        setDate = (Button)findViewById(R.id.setDate);
+        setDate = (Button) findViewById(R.id.setDate);
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
@@ -78,12 +80,10 @@ public class PupilActivity extends Activity {
         resetRadioBtns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isFacebookFriend.setChecked(false);
-                isTheoryPassed.setChecked(false);
-                isTestBooked.setChecked(false);
+                resetRadioBtns();
             }
         });
-        showDate(year, month+1, day);
+        showDate(year, month + 1, day);
         /**
          * back button
          */
@@ -106,18 +106,11 @@ public class PupilActivity extends Activity {
         /**
          * Clear Button
          */
-        clearData =  (Button) findViewById(R.id.btnClear);
+        clearData = (Button) findViewById(R.id.btnClear);
         clearData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fullName.setText("");
-                houseStreet.setText("");
-                town.setText("");
-                postcode.setText("");
-                contact.setText("");
-                isFacebookFriend.setChecked(false);
-                isTheoryPassed.setChecked(false);
-                isTestBooked.setChecked(false);
+                resetData();
 
             }
         });
@@ -128,41 +121,44 @@ public class PupilActivity extends Activity {
         addPupil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(!validateInput()) {
+                    try {
+                        Skill skillObj = new Skill();
+                        skillObj.setBayParking(0);
+                        skillObj.setCockpitDrill(0);
+                        skillObj.setCrossroads(0);
+                        skillObj.setDefensiveDriving(0);
+                        skillObj.setDualCarriageways(0);
+                        skillObj.setEcoDriving(0);
+                        skillObj.setEmergencyStop(0);
+                        skillObj.setLeftReverse(0);
+                        skillObj.setMeetingSituations(0);
+                        skillObj.setOneWayStreets(0);
+                        skillObj.setUsingMirrors(0);
+                        skillObj.setTurnInTheRoad(0);
+                        skillObj.setTurningLeft(0);
+                        skillObj.setTurningRight(0);
+                        skillObj.setMovingAway(0);
+                        skillObj.settJunction(0);
+                        skillObj.setStopping(0);
+                        skillObj.setPedestarianCrossing(0);
+                        skillObj.setRoundabouts(0);
+                        skillObj.setParallelParking(0);
+                        skillObj.setShowAndTell(0);
+                        skillObj.setMockTests(0);
+                        skillObj.save();
+                        Pupil object = new Pupil(fullName.getText().toString(), houseStreet.getText().toString(), town.getText().toString(), postcode.getText().toString(), contact.getText().toString(), isFacebookFriend.isChecked(), isTheoryPassed.isChecked(), isTestBooked.isChecked(), dateText.getText().toString(), testPassed.getSelectedItem().toString(), lessonHad.getSelectedItem().toString(), skillObj);
+                        object.save();
+                        Toast.makeText(mContext, "Contact saved successfully.", Toast.LENGTH_SHORT).show();
+                        resetData();
+                    } catch (Exception e) {
 
-               try {
+                        Toast.makeText(mContext, "Error while writing to Database", Toast.LENGTH_LONG).show();
 
-                   Skill skillObj = new Skill();
-                   skillObj.setBayParking(0);
-                   skillObj.setCockpitDrill(0);
-                   skillObj.setCrossroads(0);
-                   skillObj.setDefensiveDriving(0);
-                   skillObj.setDualCarriageways(0);
-                   skillObj.setEcoDriving(0);
-                   skillObj.setEmergencyStop(0);
-                   skillObj.setLeftReverse(0);
-                   skillObj.setMeetingSituations(0);
-                   skillObj.setOneWayStreets(0);
-                   skillObj.setUsingMirrors(0);
-                   skillObj.setTurnInTheRoad(0);
-                   skillObj.setTurningLeft(0);
-                   skillObj.setTurningRight(0);
-                   skillObj.setMovingAway(0);
-                   skillObj.settJunction(0);
-                   skillObj.setStopping(0);
-                   skillObj.setPedestarianCrossing(0);
-                   skillObj.setRoundabouts(0);
-                   skillObj.setParallelParking(0);
-                   skillObj.setShowAndTell(0);
-                   skillObj.setMockTests(0);
-                   skillObj.save();
-                   Pupil object = new Pupil(fullName.getText().toString(), houseStreet.getText().toString(), town.getText().toString(), postcode.getText().toString(), contact.getText().toString(), isFacebookFriend.isChecked(), isTheoryPassed.isChecked(), isTestBooked.isChecked(), dateText.getText().toString(), testPassed.getSelectedItem().toString(), lessonHad.getSelectedItem().toString(),skillObj);
-                   object.save();
-                   Toast.makeText(mContext,"Contact saved successfully.",Toast.LENGTH_SHORT).show();
-               }catch(Exception e ){
-
-                   Toast.makeText(mContext,"Error while writing to Database",Toast.LENGTH_LONG).show();
-
-               }
+                    }
+                }else{
+                    Toast.makeText(mContext, "Please fill all the details.", Toast.LENGTH_LONG).show();
+                }
             }
         });
         lessonHadArray = new ArrayList<String>();
@@ -177,7 +173,38 @@ public class PupilActivity extends Activity {
         lessonHad.setAdapter(lessonHadAdapter);
     }
 
-    private void showDate(int year,int month, int day){
+    private void showDate(int year, int month, int day) {
         dateText.setText(new StringBuilder().append(day).append("/").append(month).append("/").append(year));
+    }
+
+    /**
+     * Reset radio buttons
+     */
+    private void resetRadioBtns() {
+        isFacebookFriend.setChecked(false);
+        isTheoryPassed.setChecked(false);
+        isTestBooked.setChecked(false);
+    }
+
+    /**
+     * Reset Data
+     */
+    private void resetData() {
+        fullName.setText("");
+        houseStreet.setText("");
+        town.setText("");
+        postcode.setText("");
+        contact.setText("");
+        resetRadioBtns();
+    }
+
+    /**
+     * Validate inputs
+     */
+    private boolean validateInput() {
+        if (fullName.getText().toString().isEmpty() || houseStreet.getText().toString().isEmpty() || town.getText().toString().isEmpty() || postcode.getText().toString().isEmpty())
+            return true;
+        else
+            return false;
     }
 }
