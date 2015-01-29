@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_margin="10dp" android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/skillInfoImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-       <TextView
+
+    <TextView
         android:id="@+id/skillInfoDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/stopping"/>
+        android:text="@string/stopping" />
 
     <Button
         android:id="@+id/dialogClose"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btnDialogCancel"/>
+        android:text="@string/btnDialogCancel" />
 
+    <Button
+        android:id="@+id/dialogShowImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnDialogImage" />
 
 </LinearLayout>

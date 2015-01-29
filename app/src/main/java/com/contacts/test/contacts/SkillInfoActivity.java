@@ -3,6 +3,7 @@ package com.contacts.test.contacts;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -43,7 +44,7 @@ public class SkillInfoActivity extends Activity {
             }
         });
         skillListView = (ListView) findViewById(R.id.skillInfoListView);
-        skills = new String[]{"cockpitDrill", "movingAway", "stopping", "turningLeft", "turningRight", "tJunction", "crossRoads", "roundAbouts", "pedestrianCrossing", "emergencyStop", "usingMirrors", "dualCarriageways", "oneWayStreets", "meetingSituations", "defensiveDriving", "ecoDriving", "turnInTheRoads", "parallelParking", "leftReverse", "bayParking", "showAndTell", "mockTests"};
+        skills = new String[]{"cockpitDrill", "movingAway", "stopping", "turningLeft", "turningRight", "tJunction", "crossRoads", "roundAbouts", "pedestrianCrossing", "emergencyStop", "usingMirrors", "dualCarriageways", "oneWayStreets", "meetingSituations", "defensiveDriving", "ecoDriving", "turnInTheRoads", "parallelParking", "leftReverse", "bayParking", "independentDriving", "mockTests"};
         hashMap = new LinkedHashMap<String, String>();
         for (int i = 0; i < skills.length; i++) {
            /* Log.d("SKill Info Name",  getStringResourceByName(skills[i]));*/
@@ -66,7 +67,15 @@ public class SkillInfoActivity extends Activity {
                 //setting the custom dialog component
                 TextView skillInfoDetailText = (TextView) dialog.findViewById(R.id.skillInfoDetail);
                 skillInfoDetailText.setText(skillInfoText);
-                ImageView skilImage = (ImageView) dialog.findViewById(R.id.skillInfoImage);
+                Button skillImage = (Button) dialog.findViewById(R.id.dialogShowImage);
+                skillImage.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent scribble = new Intent(SkillInfoActivity.this,ScribbleActivity.class);
+                        startActivity(scribble);
+                        dialog.dismiss();
+                    }
+                });
                 Button dialogClose = (Button) dialog.findViewById(R.id.dialogClose);
                 dialogClose.setOnClickListener(new View.OnClickListener() {
                     @Override

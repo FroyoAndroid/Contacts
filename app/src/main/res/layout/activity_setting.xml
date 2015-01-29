@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:gravity="center_horizontal|center_vertical">
-
+    android:gravity="center_horizontal">
     <Button
-        android:id="@+id/backupDB"
+        android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Backup Database(In SD card)"
+        android:text="@string/backButton"
+        android:layout_alignParentTop="true"/>
+    <Button
+        android:id="@+id/backupDB"
+        android:layout_below="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Backup DB (In SD card)"
         android:layout_margin="20dp"/>
 
     <Button

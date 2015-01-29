@@ -20,7 +20,7 @@ import java.nio.channels.FileChannel;
  * Created by nirajkumar.chauhan on 1/27/2015.
  */
 public class SettingActivity extends Activity {
-    private Button backupDB,restoreDB;
+    private Button backupDB,restoreDB,backBtn;
     String packageName = "com.contacts.test.contacts";
     String dbName ="skillContact.db";
     int REQUESTCODE_PICK_DB = 1;
@@ -30,6 +30,7 @@ public class SettingActivity extends Activity {
         setContentView(R.layout.activity_setting);
         backupDB = (Button) findViewById(R.id.backupDB);
         restoreDB =(Button) findViewById(R.id.restoreDB);
+        backBtn = (Button) findViewById(R.id.back);
         backupDB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +67,13 @@ public class SettingActivity extends Activity {
             }
         });
 
+        // backBtn ----finish the activity
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 

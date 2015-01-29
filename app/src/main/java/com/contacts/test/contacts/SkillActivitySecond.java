@@ -32,7 +32,7 @@ public class SkillActivitySecond extends Activity {
     List<Pupil> listPupil;
     List<String> listPupilName;
     ListView skilListView;
-    Button saveData;
+    Button saveData,backBtn;
     Skill object;
     Pupil currentPupil;
     List<String> lessonHadArray;
@@ -49,6 +49,7 @@ public class SkillActivitySecond extends Activity {
         lessonHad = (Spinner) findViewById(R.id.lessonsHad);
         skilListView = (ListView) findViewById(R.id.ratingList);
         saveData = (Button) findViewById(R.id.btnSaveData);
+        backBtn = (Button) findViewById(R.id.back);
         listPupil = new ArrayList<Pupil>();
         listPupil = Pupil.listAll(Pupil.class);
         if (listPupil.size() == 0) {
@@ -186,6 +187,15 @@ public class SkillActivitySecond extends Activity {
                         Toast.makeText(getApplicationContext(), "Error while writing to database.", Toast.LENGTH_SHORT).show();
                     }
 
+                }
+            });
+            /**
+             * Back button == finish the activity
+             */
+            backBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
                 }
             });
 

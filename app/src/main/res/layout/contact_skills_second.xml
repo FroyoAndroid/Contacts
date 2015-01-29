@@ -3,12 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <Button
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="@string/backButton"/>
     <Spinner
         android:id="@+id/spinnerPupil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/back"
         android:padding="10dp"
         style="@style/spinnerStyle"
         android:textAlignment="center">
