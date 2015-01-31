@@ -198,6 +198,7 @@ public class PupilActivity extends Activity {
         resetRadioBtns();
     }
 
+
     /**
      * Validate inputs
      */

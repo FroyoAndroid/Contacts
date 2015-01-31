@@ -27,10 +27,12 @@ public class SkillInfoActivity extends Activity {
     ArrayList<String> linkedHashMapValues;
     LinkedHashMap<String, String> hashMap;
     String[] skills;
+    int[] skillsDrawable;
     Button backButton;
     ListView skillListView;
     SkillInfoAdapter adapter;
-   final  Context mContext=this;
+    final Context mContext = this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,11 @@ public class SkillInfoActivity extends Activity {
         });
         skillListView = (ListView) findViewById(R.id.skillInfoListView);
         skills = new String[]{"cockpitDrill", "movingAway", "stopping", "turningLeft", "turningRight", "tJunction", "crossRoads", "roundAbouts", "pedestrianCrossing", "emergencyStop", "usingMirrors", "dualCarriageways", "oneWayStreets", "meetingSituations", "defensiveDriving", "ecoDriving", "turnInTheRoads", "parallelParking", "leftReverse", "bayParking", "independentDriving", "mockTests"};
+        /**
+         * Put the skill Images in drawable folder:: All the images need to be of jpeg type as for example background.jpg in drawable folder
+         * Then fill the skillsDrawable array in the same order as the skills array
+         */
+        skillsDrawable = new int[]{R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.background};
         hashMap = new LinkedHashMap<String, String>();
         for (int i = 0; i < skills.length; i++) {
            /* Log.d("SKill Info Name",  getStringResourceByName(skills[i]));*/
@@ -52,13 +59,13 @@ public class SkillInfoActivity extends Activity {
         }
 
         //Log.d("Size",""+hashMap.size());
-        adapter = new SkillInfoAdapter(hashMap,this);
+        adapter = new SkillInfoAdapter(hashMap, this);
         skillListView.setAdapter(adapter);
 
         //Skill ListView Item Click Listener
         skillListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 Log.d("Competency Info", hashMap.get(skills[position]));
                 String skillInfoText = hashMap.get(skills[position]);
                 final Dialog dialog = new Dialog(mContext);
@@ -71,7 +78,8 @@ public class SkillInfoActivity extends Activity {
                 skillImage.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent scribble = new Intent(SkillInfoActivity.this,ScribbleActivity.class);
+                        Intent scribble = new Intent(SkillInfoActivity.this, ScribbleActivityFinal.class);
+                        scribble.putExtra("skilldrawable", skillsDrawable[position]);
                         startActivity(scribble);
                         dialog.dismiss();
                     }

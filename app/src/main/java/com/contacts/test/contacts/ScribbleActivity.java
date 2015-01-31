@@ -10,6 +10,7 @@ import android.graphics.Path;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 
 /**
  * Created by nirajkumar.chauhan on 1/16/2015.
